@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Clustering results</title>
+
+    </head>
+	<body>
+        <h2>Selecting the number of clusters</h2>
+
+        <table class="table table-striped">
+            <tr><td>Participants count</td><td></td></tr>
+            <tr><td>Sessions per participant count</td><td></td></tr>
+            <tr><td>Scans count in sessions</td><td></td></tr>
+            <tr><td>TR</td><td> s</td></tr>
+            <tr><td>Window length</td><td>16 (= 40.16 s)</td></tr>
+            <tr><td>Window shift step</td><td>1 (= 6.25 % of window length)</td></tr>
+            <tr><td>Parcelation</td><td>AAL</td></tr>
+            <tr><td>ROIs count</td><td></td></tr>
+            <tr><td>Connections length</td><td></td></tr>
+            <tr><td>Windows count per session</td><td></td></tr>
+            <tr><td>Windows count total</td><td></td></tr>
+            <tr><td>Clustering method</td><td>kmeans</td></tr>
+            <tr><td>Clusters count</td><td>{{clusters_from}}:{{clusters_to}}</td></tr>
+            <tr><td>Selecting the number of clusters</td><td>silhouette analysis</td></tr>
+        </table>
+
+        <h3>Selecting the number of clusters</h3>
+        <img src="silhouette/comparison.png" alt="Silhouette average comparison"><br>
+
+        <h3>Individual results for all clusters</h3>
+        <script>
+            let from = {{clusters_from}}
+            let to = {{clusters_to}}
+
+            for (let k = from; k <= to; k++) {
+                let kzeros = k < 10 ? ('0' + k) : k
+                document.write('<img src="silhouette/kmeans-' + kzeros + '.png" alt="Silhouette for ' + k + ' clusters"><br>\n')
+            }
+        </script>
+
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <style>
+            body { padding: 10px; }
+            img { width: 100%; max-width: 1000px; }
+        </style>
+	</body>
+</html>

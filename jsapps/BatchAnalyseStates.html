@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Statisticis</title>
+
+    </head>
+	<body>
+        <h2>Statistics</h2>
+
+        <p>Sessions summary: <select id="summarySessions"></select></p>
+        <p>Columns summary: <select id="summaryColumns"></select></p>
+
+        <h3>Two-sample t-test</h3>
+        <div>
+            <p>2-sample t-test groups selection:
+                Group 1 (3: 1, 4: 1): <input type="text" id="group1Def" value="1: F, 3: 0" />
+                Group 1 (3: 0, 4: 0): <input type="text" id="group2Def" value="1: M, 3: 0" />
+                <button id="analyseTTestButton">Analyse t-test</button>
+            </p>
+        </div>
+
+        <div id="statsResultPanel" class="hidden">
+            <p><a id="hideStatisticsResults" href="javascript:">Hide statistics results</a></p>
+            <table class="table">
+                <tr>
+                    <td>Param</td>
+                    <td>G1 count</td>
+                    <td>G1 mean</td>
+                    <td>G1 stdev</td>
+                    <td>G2 Count</td>
+                    <td>G2 mean</td>
+                    <td>G2 stdev</td>
+                    <td>t-value</td>
+                    <td>p-value</td>
+                </tr>
+                <tbody id="resultsTbody"></tbody>
+            </table>
+        </div>
+
+        <h3>Individual states summary</h3>
+        <div id="mainTablePanel"></div>
+
+        <script src="stats-ttest2.js"></script>
+        <script src="analyse-states-data.js"></script>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="table_view.js"></script>
+        <style>
+            body { padding: 10px; }
+            .title { border-bottom: 1px dotted black; }
+            .signifRow { background-color: rgb(195, 245, 198); }
+            .hidden { display: none; }
+            #mainTablePanel th span { writing-mode: vertical-rl; text-orientation: sideways-right; transform: rotate(210deg); }
+        </style>
+	</body>
+</html>

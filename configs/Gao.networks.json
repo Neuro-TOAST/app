@@ -1,0 +1,52 @@
+{
+    "spheres": {
+        "radius": 8,
+        "centers": [
+            { "name": "laPFC",  "coords": [-36, 57, 9] },
+            { "name": "raPFC",  "coords": [34, 52, 10] },
+            { "name": "ACC",  "coords": [3, 31, 27] },
+            { "name": "laIPL",  "coords": [-52, -49, 47] },
+            { "name": "raIPL",  "coords": [52, -46, 46] },
+            { "name": "ldlPFC",  "coords": [-50, 20, 34] },
+            { "name": "rdlPFC",  "coords": [46, 14, 43] },
+            { "name": "lINS",  "coords": [-31, 21, -1] },
+            { "name": "rINS",  "coords": [31, 22, -2] },
+
+            { "name": "lCal",  "coords": [-8, -72, 4] },
+            { "name": "rCal",  "coords": [16, -67, 5] },
+            { "name": "lCS",  "coords": [-5, -96, 12] },
+            { "name": "rCS",  "coords": [18, -96, 12] },
+            { "name": "lLO",  "coords": [-23, -89, 12] },
+            { "name": "rLO",  "coords": [37, -85, 13] },
+
+            { "name": "lHF",  "coords": [-21, -15, -14] },
+            { "name": "rHF",  "coords": [24, -19, -21] },
+            { "name": "vmPFC",  "coords": [0, 51, -7] },
+            { "name": "PCC",  "coords": [1, -55, 17] },
+            { "name": "lpIPL",  "coords": [-47, -71, 29] },
+            { "name": "rpIPL",  "coords": [50, -64, 27] },
+
+            { "name": "lMT+",  "coords": [-45, -69, -2] },
+            { "name": "rMT+",  "coords": [50, -69, -3] },
+            { "name": "lIPS",  "coords": [-27, -52, 57] },
+            { "name": "rIPS",  "coords": [24, -56, 55] },
+            { "name": "lFEF",  "coords": [-25, -8, 50] },
+            { "name": "rFEF",  "coords": [27, -8, 50] },
+
+            { "name": "lPreC",  "coords": [-41, -4, 54] },
+            { "name": "rPreC",  "coords": [42, -13, 53] },
+            { "name": "lPoC",  "coords": [-45, -26, 54] },
+            { "name": "rPoC",  "coords": [49, -27, 53] },
+            { "name": "SMA",  "coords": [6, -5, 54] }
+        ]
+    },
+
+    "networks": [
+        { "name": "FPCN", "spheres": ["laPFC", "raPFC", "ACC", "laIPL", "raIPL", "ldlPFC", "rdlPFC", "lINS", "rINS"] },
+        { "name": "Visual", "spheres": ["lCal", "rCal", "lCS", "rCS", "lLO", "rLO"] },
+        { "name": "DMN", "spheres": ["lHF", "rHF", "vmPFC", "PCC", "lpIPL", "rpIPL"] },
+        { "name": "DAN", "spheres": ["lMT+", "rMT+", "lIPS", "rIPS", "lFEF", "rFEF"] },
+        { "name": "Motor", "spheres": ["lPreC", "rPreC", "lPoC", "rPoC", "SMA"] }
+    ]
+
+}
